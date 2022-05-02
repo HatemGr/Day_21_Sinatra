@@ -12,15 +12,16 @@
     crossorigin="anonymous"></script>
     <!-- Link to Fontawesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
-    <title>Indice des potins</title>
+    <title>liste des potins</title>
   </head>
 
   <body class="m-4">
-  <h1> Voici les gossips du moment : </h1>
+    <h1> Voici les gossips du moment : </h1>
 
-
+    <ul class="list-group list-group-flush">
     <dl class="row">
       <% gossips.each do |gossip|%>
+        <li class="list-group-item">
         <dt class="col-sm-3">Auteur</dt>
         <dd class="col-sm-9"><%= gossip.author %><br/></dd>
 
@@ -28,8 +29,10 @@
         <dd class="col-sm-9">
           <p><%= gossip.content %></p>
         </dd>
+        </li>
       <%end%>
     </dl>
+    </ul>
 
     <a class="m-4" href="/"> Retour à la page d'accueil</a>
   </body>
