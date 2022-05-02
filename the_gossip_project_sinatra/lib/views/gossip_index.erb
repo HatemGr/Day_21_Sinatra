@@ -1,16 +1,36 @@
+<!Doctype html>
 <html>
   <head>
-    <title>The Gossip Project</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS and JS-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+    <!-- Link to Fontawesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <title>Indice des potins</title>
   </head>
-  <body>
-  <h1> Voici les gossips du moment : </h1>
-    <% gossips.each do |gossip|%>
-      <p>
-        <%= gossip.author %><br/>
-        <%= gossip.content %>
-      </p>
-    <%end%>
 
-    <a href="/"> Retour à la page d'accueil</a>
+  <body class="m-4">
+  <h1> Voici les gossips du moment : </h1>
+
+
+    <dl class="row">
+      <% gossips.each do |gossip|%>
+        <dt class="col-sm-3">Auteur</dt>
+        <dd class="col-sm-9"><%= gossip.author %><br/></dd>
+
+        <dt class="col-sm-3">Potin</dt>
+        <dd class="col-sm-9">
+          <p><%= gossip.content %></p>
+        </dd>
+      <%end%>
+    </dl>
+
+    <a class="m-4" href="/"> Retour à la page d'accueil</a>
   </body>
 </html>
