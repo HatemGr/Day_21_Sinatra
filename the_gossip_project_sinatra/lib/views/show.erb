@@ -1,0 +1,34 @@
+<html>
+  <head>
+    <title>The Gossip Project</title>
+  </head>
+  <body>
+  <h1> PAGE POTIN</h1>
+  
+  <%if gossip.author.nil?%>
+    <h2>Pas de potin à cet indice</h2>
+    <%else%>
+    <h2> Voici la page du potin numero <%= id %></h2>
+        <p> Son auteur est : <%= gossip.author %></p>
+        <p> Le contenu du potin est : <%= gossip.content %></p>
+        <a href="edit/">Editer le gossip </a><br/>
+  <%end%>
+  
+  <h3>Commentaires</h3>
+  <ul>
+  <% if gossip.comments.size <= 4%>
+      <p> Pas encore de commentaire posté </p>
+    <%else%>
+      <% gossip.comments[5..-1].split("///").each do |comment|%>
+        <li><p> <%=comment%> </p></li>
+      <%end %>
+  <%end %>
+  </ul>
+  <form action='/gossips/<%=id%>/' method='POST'>
+    Ajouter un commentaire:  <input type='text' name='new_comment'/><br/>
+    <input type='submit'/>
+  </form>
+
+    <a href="/"> Retour à la page d'accueil</a>
+  </body>
+</html>

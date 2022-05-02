@@ -1,0 +1,16 @@
+<html>
+  <head>
+    <title>The Gossip Project</title>
+  </head>
+  <body>
+  <h1> Voici les gossips du moment : </h1>
+    <% gossips.each do |gossip|%>
+      <p>
+        <%= gossip.author %><br/>
+        <%= gossip.content %>
+      </p>
+    <%end%>
+
+    <a href="/"> Retour à la page d'accueil</a>
+  </body>
+</html>
